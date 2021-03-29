@@ -1,4 +1,4 @@
-# ciqdashboard (Cognizant Integrated Quality Dashboard)
+d# ciqdashboard (Cognizant Integrated Quality Dashboard)
 Cognizant Integrated Quality Dashboard (CIQDashboard) is a data visualization solution that can transform data reporting into interactive business intelligence dashboards
 
 # Cognizant ciqdashboard – Big Picture
@@ -21,5 +21,26 @@ https://github.com/CognizantStudio/ciqdashboard-ui
   # 2. API Services
   API Service contain all form data to # save,update,edit and delete #, to show the Graphical view and Table view. 
   https://github.com/CognizantStudio/ciqdashboard-api
+  
+  # Collectors
+  Data collect from various testmanagement tool, to collect fields and their values based on configuration. 
+  
+  # List of collectors
+  
+    https://github.com/CognizantStudio/ciqdashboard-ui
+    https://github.com/CognizantStudio/ciqdashboard-collector-sonarqube
+    https://github.com/CognizantStudio/ciqdashboard-collector-jira
+    https://github.com/CognizantStudio/ciqdashboard-collector-jenkins
+    https://github.com/CognizantStudio/ciqdashboard-collector-gitlab
+    https://github.com/CognizantStudio/ciqdashboard-collector-github
+    https://github.com/CognizantStudio/ciqdashboard-collector-artifactory
+    https://github.com/CognizantStudio/ciqdashboard-collector-alm
+    https://github.com/CognizantStudio/ciqdashboard-auth
+    https://github.com/CognizantStudio/ciqdashboard-api
+
+    
+
+
+
   
 
