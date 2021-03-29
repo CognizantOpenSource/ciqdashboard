@@ -23,7 +23,7 @@ https://github.com/CognizantStudio/ciqdashboard-ui
   https://github.com/CognizantStudio/ciqdashboard-api
   
   # Collectors
-  Data collect from various testmanagement tool, to collect fields and their values based on configuration. 
+ Collector is a standalone application that extracts data from source tool using REST API and stores in Mongo DB. We have collectors for JIRA, ALM, JENKINS, GITLAB, GITHUB, SONARQUBE, ARTIFACTORY. These applications can be executed as scheduled job 
   
   # List of Collectors
   
