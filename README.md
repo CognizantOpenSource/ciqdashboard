@@ -27,16 +27,16 @@ https://github.com/CognizantStudio/ciqdashboard-ui
   
   # List of collectors
   
-    https://github.com/CognizantStudio/ciqdashboard-ui
-    https://github.com/CognizantStudio/ciqdashboard-collector-sonarqube
-    https://github.com/CognizantStudio/ciqdashboard-collector-jira
-    https://github.com/CognizantStudio/ciqdashboard-collector-jenkins
-    https://github.com/CognizantStudio/ciqdashboard-collector-gitlab
-    https://github.com/CognizantStudio/ciqdashboard-collector-github
-    https://github.com/CognizantStudio/ciqdashboard-collector-artifactory
-    https://github.com/CognizantStudio/ciqdashboard-collector-alm
-    https://github.com/CognizantStudio/ciqdashboard-auth
-    https://github.com/CognizantStudio/ciqdashboard-api
+  # ALM Collector
+  https://github.com/CognizantStudio/ciqdashboard-collector-alm
+  
+  # Artifactory Collector
+  https://github.com/CognizantStudio/ciqdashboard-collector-artifactory
+  
+  # Github
+  https://github.com/CognizantStudio/ciqdashboard-collector-github
+  
+
 
     
 
