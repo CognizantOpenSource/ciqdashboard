@@ -15,11 +15,11 @@ https://github.com/CognizantStudio/ciqdashboard-ui
   Build RESTful web Service with Spring Boot. Build the CURD API to connect MongoDB.
   
   # 1. Authentication Service 
-  Authentication Service facilitates username/password validation Token based authentication. 
+  Authentication Service facilitates Native and LDAP authentication. 
   https://github.com/CognizantStudio/ciqdashboard-auth
 
   # 2. API Services
-  API Service contain all form data to # save,update,edit and delete #, to show the Graphical view and Table view. 
+  API Service contain all form data to save,update,edit and delete, to show the Graphical view and Table view. 
   https://github.com/CognizantStudio/ciqdashboard-api
   
   # Collectors
