@@ -27,25 +27,25 @@ https://github.com/CognizantStudio/ciqdashboard-ui
   
   # List of Collectors
   
-  # 1.ALM
+  # 1. ALM
   https://github.com/CognizantStudio/ciqdashboard-collector-alm
   
-  # 2.Artifactory
+  # 2. Artifactory
   https://github.com/CognizantStudio/ciqdashboard-collector-artifactory
   
-  # 3.Github
+  # 3. Github
   https://github.com/CognizantStudio/ciqdashboard-collector-github
   
-  # 4.Gitlab
+  # 4. Gitlab
   https://github.com/CognizantStudio/ciqdashboard-collector-gitlab
   
-  # 5.enkins
+  # 5. Jenkins
   https://github.com/CognizantStudio/ciqdashboard-collector-jenkins
   
-  # 6.Jira
+  # 6. Jira
    https://github.com/CognizantStudio/ciqdashboard-collector-jira
    
-  # 7.Sonarqube
+  # 7. Sonarqube
   https://github.com/CognizantStudio/ciqdashboard-collector-sonarqube
   
 
