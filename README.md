@@ -7,5 +7,5 @@ Cognizant Integrated Quality Dashboard (CIQDashboard) is a data visualization so
 # Cognizant ciqdashboard – Solution Architecture
 ![Alt_text](https://github.com/CognizantStudio/ciqdashboard/blob/main/ciqdashboard_Solution_Architecture.png)
 
-
+# ciqdashboard UI - was generated with Angular CLI version 8.3.6.
 
