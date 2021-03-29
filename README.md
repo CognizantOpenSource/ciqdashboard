@@ -3,6 +3,8 @@ Cognizant Integrated Quality Dashboard (CIQDashboard) is a data visualization so
 
 Cognizant ciqdashboard – Big Picture
 
+![alt text](http://url/to/img.png)
+
 
 
 
