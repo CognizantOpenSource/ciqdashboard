@@ -1,0 +1,93 @@
+db.permissions.insert(
+  [
+    {
+      "_id" : "ciqdashboard.create",
+      "name" : "Create Dashboard"
+    },
+    {
+      "_id" : "ciqdashboard.update",
+      "name" : "Update Dashboard"
+    },
+    {
+      "_id" : "ciqdashboard.delete",
+      "name" : "Delete Dashboard"
+    },
+    {
+      "_id" : "ciqdashboard.view",
+      "name" : "View Dashboard"
+    },
+
+    {
+      "_id" : "ciqdashboard.project.create",
+      "name" : "Create Dashboard Project"
+    },
+    {
+      "_id" : "ciqdashboard.project.update",
+      "name" : "Update Dashboard Project"
+    },
+    {
+      "_id" : "ciqdashboard.project.delete",
+      "name" : "Delete Dashboard Project"
+    },
+    {
+      "_id" : "ciqdashboard.project.view",
+      "name" : "View Dashboard Project"
+    },
+
+    {
+      "_id" : "ciqdashboard.external.data.update",
+      "name" : "Upload external data"
+    },
+
+    {
+      "_id" : "ciqdashboard.datasource.create",
+      "name" : "Create Dashboard Datasource"
+    },
+    {
+      "_id" : "ciqdashboard.datasource.update",
+      "name" : "Update Dashboard Datasource"
+    },
+    {
+      "_id" : "ciqdashboard.datasource.delete",
+      "name" : "Delete Dashboard Datasource"
+    },
+    {
+      "_id" : "ciqdashboard.datasource.view",
+      "name" : "View Dashboard Datasource"
+    },
+
+    {
+      "_id" : "ciqdashboard.chart.create",
+      "name" : "Create Dashboard Chart"
+    },
+    {
+      "_id" : "ciqdashboard.chart.update",
+      "name" : "Update Dashboard Chart"
+    },
+    {
+      "_id" : "ciqdashboard.chart.delete",
+      "name" : "Delete Dashboard Chart"
+    },
+    {
+      "_id" : "ciqdashboard.chart.view",
+      "name" : "View Dashboard Chart"
+    },
+
+    {
+      "_id" : "ciqdashboard.page.create",
+      "name" : "Create Dashboard Page"
+    },
+    {
+      "_id" : "ciqdashboard.page.update",
+      "name" : "Update Dashboard Page"
+    },
+    {
+      "_id" : "ciqdashboard.page.delete",
+      "name" : "Delete Dashboard Page"
+    },
+    {
+      "_id" : "ciqdashboard.page.view",
+      "name" : "View Dashboard Page"
+    }
+  ]
+);

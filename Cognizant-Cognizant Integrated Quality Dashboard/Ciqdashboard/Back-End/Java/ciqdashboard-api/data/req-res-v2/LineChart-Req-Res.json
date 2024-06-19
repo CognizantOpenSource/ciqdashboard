@@ -1,0 +1,76 @@
+==========LineChart==========
+------- Request     POST "http://localhost:2025/collector/chart?collector-name=gitlab&chart-name=LineChart"
+
+
+{
+  "filters": [
+    {
+      "name": "projectName-in",
+      "configs": [
+        {
+          "field": "projectName",
+          "op": "in",
+          "value": [
+            "auth-api",
+            "dashboard-api","dashboard-ui",
+            "dashboard-client",
+            "execution-api",
+            "execution-robot",
+            "leap-collector-gitlab",
+            "workbench-api"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "projectName-in",
+      "configs": [
+        {
+          "field": "projectId",
+          "op": "in",
+          "value": [
+            11,22,33,23,12,13,24,14,15,16,17,19,9,30,20,31,32,21,10
+          ]
+        }
+      ]
+    }
+  ],
+  "groupBy": "committerEmail"
+}
+
+
+------- Response
+
+[
+  {
+    "name": "paradox@outlook.in",
+    "value": 124,
+    "children": null,
+    "series": null
+  },
+  {
+    "name": "karunakaran.ks@cognizant.com",
+    "value": 27,
+    "children": null,
+    "series": null
+  },
+  {
+    "name": "784420@cognizant.com",
+    "value": 17,
+    "children": null,
+    "series": null
+  },
+  {
+    "name": "ramanjaneyulu.kummari@cognizant.com",
+    "value": 46,
+    "children": null,
+    "series": null
+  },
+  {
+    "name": "prabu.monkayarkarasiayyappan@cognizant.com",
+    "value": 6,
+    "children": null,
+    "series": null
+  }
+]
+

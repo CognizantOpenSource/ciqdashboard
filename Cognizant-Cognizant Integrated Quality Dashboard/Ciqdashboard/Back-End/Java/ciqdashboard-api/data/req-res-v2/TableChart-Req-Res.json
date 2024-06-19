@@ -1,0 +1,175 @@
+==========TableChart==========
+------- Request     POST "http://localhost:2025/collector/chart/table?collector-name=gitlab"
+
+
+{
+  "filters": [
+    {
+      "name": "projectName-in",
+      "configs": [
+        {
+          "field": "projectName",
+          "op": "in",
+          "value": [
+            "auth-api",
+            "dashboard-api","dashboard-ui",
+            "dashboard-client",
+            "execution-api",
+            "execution-robot",
+            "leap-collector-gitlab",
+            "workbench-api"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "projectName-in",
+      "configs": [
+        {
+          "field": "projectId",
+          "op": "in",
+          "value": [
+            11,22,33,23,12,13,24,14,15,16,17,19,9,30,20,31,32,21,10
+          ]
+        }
+      ]
+    }
+  ],
+  "projection": [
+    "message",
+    "committerName",
+    "committedDate"
+  ],
+  "projectionWithAlias":  {
+    "id": "shortId",
+    "meta.id__title": "commitId",
+    "meta.id__link": "concat(projectWebUrl,'/commits/', commitId)",
+    "meta.committerName__title": "committerEmail"
+  },
+  "excludeFields": [
+    "_id"
+  ],
+  "sort": {
+    "type": "DESC",
+    "fields": [
+      "committedDate"
+    ]
+  },
+  "limit": 10
+}
+
+------- Response
+
+[
+  {
+    "message": "added log4j logging\n",
+    "committerName": "Ramanjaneyulu Kummari",
+    "committedDate": "2020-07-16T11:19:51.000+0000",
+    "id": "967b1b4a",
+    "meta": {
+      "id__title": "967b1b4a1eeec6d846f82ce689e5a73685d538a4",
+      "id__link": "http://10.120.100.108:8929/leap/execution/execution-robot/commits/967b1b4a1eeec6d846f82ce689e5a73685d538a4",
+      "committerName__title": "784420@cognizant.com"
+    }
+  },
+  {
+    "message": "added log4j logging\n",
+    "committerName": "Ramanjaneyulu Kummari",
+    "committedDate": "2020-07-16T11:19:51.000+0000",
+    "id": "967b1b4a",
+    "meta": {
+      "id__title": "967b1b4a1eeec6d846f82ce689e5a73685d538a4",
+      "id__link": "http://10.120.100.108:8929/leap/execution/execution-robot/commits/967b1b4a1eeec6d846f82ce689e5a73685d538a4",
+      "committerName__title": "784420@cognizant.com"
+    }
+  },
+  {
+    "message": "added log4j logging\n",
+    "committerName": "Ramanjaneyulu Kummari",
+    "committedDate": "2020-07-16T11:18:41.000+0000",
+    "id": "2c0b274b",
+    "meta": {
+      "id__title": "2c0b274b476e61fd48eeb13f412c7b8691f0202b",
+      "id__link": "http://10.120.100.108:8929/leap/execution/execution-robot/commits/2c0b274b476e61fd48eeb13f412c7b8691f0202b",
+      "committerName__title": "784420@cognizant.com"
+    }
+  },
+  {
+    "message": "Merge remote-tracking branch 'origin/master'\n",
+    "committerName": "Ramanjaneyulu Kummari",
+    "committedDate": "2020-07-16T09:36:56.000+0000",
+    "id": "0648697d",
+    "meta": {
+      "id__title": "0648697dffeb42a65ab2b0d43b7380e0793d1ba9",
+      "id__link": "http://10.120.100.108:8929/leap/execution/execution-robot/commits/0648697dffeb42a65ab2b0d43b7380e0793d1ba9",
+      "committerName__title": "784420@cognizant.com"
+    }
+  },
+  {
+    "message": "added log4j logging\n",
+    "committerName": "Ramanjaneyulu Kummari",
+    "committedDate": "2020-07-16T09:36:38.000+0000",
+    "id": "b07bdd5b",
+    "meta": {
+      "id__title": "b07bdd5b9fe014b7d7a89274764132a768573326",
+      "id__link": "http://10.120.100.108:8929/leap/execution/execution-robot/commits/b07bdd5b9fe014b7d7a89274764132a768573326",
+      "committerName__title": "784420@cognizant.com"
+    }
+  },
+  {
+    "message": "added log level in entrypoint.sh\n",
+    "committerName": "karuna",
+    "committedDate": "2020-07-16T04:41:41.000+0000",
+    "id": "e758ca3b",
+    "meta": {
+      "id__title": "e758ca3b24cc978fd4238450c7df31044afd64c2",
+      "id__link": "http://10.120.100.108:8929/leap/execution/execution-robot/commits/e758ca3b24cc978fd4238450c7df31044afd64c2",
+      "committerName__title": "karunakaran.ks@cognizant.com"
+    }
+  },
+  {
+    "message": "added log4j logging\n",
+    "committerName": "Ramanjaneyulu Kummari",
+    "committedDate": "2020-07-16T03:10:24.000+0000",
+    "id": "356b527a",
+    "meta": {
+      "id__title": "356b527a06eca7d3aafa68cea4cffa2ab976995f",
+      "id__link": "http://10.120.100.108:8929/leap/execution/execution-robot/commits/356b527a06eca7d3aafa68cea4cffa2ab976995f",
+      "committerName__title": "784420@cognizant.com"
+    }
+  },
+  {
+    "message": "added log4j logging\n",
+    "committerName": "Ramanjaneyulu Kummari",
+    "committedDate": "2020-07-15T09:10:07.000+0000",
+    "id": "ba69476f",
+    "meta": {
+      "id__title": "ba69476fac09c507a21605217fe0b0c381d1535b",
+      "id__link": "http://10.120.100.108:8929/leap/execution/execution-robot/commits/ba69476fac09c507a21605217fe0b0c381d1535b",
+      "committerName__title": "784420@cognizant.com"
+    }
+  },
+  {
+    "message": "added build steps before execution steps\n",
+    "committerName": "Ramanjaneyulu Kummari",
+    "committedDate": "2020-07-10T13:37:36.000+0000",
+    "id": "7d1d4704",
+    "meta": {
+      "id__title": "7d1d4704a333bed134bd2711715811fadec3e4a2",
+      "id__link": "http://10.120.100.108:8929/leap/execution/execution-robot/commits/7d1d4704a333bed134bd2711715811fadec3e4a2",
+      "committerName__title": "784420@cognizant.com"
+    }
+  },
+  {
+    "message": "added build steps before execution steps\n",
+    "committerName": "Ramanjaneyulu Kummari",
+    "committedDate": "2020-07-10T12:53:52.000+0000",
+    "id": "e26a2eb3",
+    "meta": {
+      "id__title": "e26a2eb32a7d16e62a62f5bb6b0804261921ba5b",
+      "id__link": "http://10.120.100.108:8929/leap/execution/execution-robot/commits/e26a2eb32a7d16e62a62f5bb6b0804261921ba5b",
+      "committerName__title": "784420@cognizant.com"
+    }
+  }
+]
+
