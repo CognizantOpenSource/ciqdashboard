@@ -1,0 +1,53 @@
+plugins {
+    id 'org.springframework.boot' version '2.7.18'
+    id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+    id 'java'
+    id "org.sonarqube" version "3.3"
+}
+
+group = 'com.cognizant.idashboard.services.metrics'
+version = '2.1'
+sourceCompatibility = '11'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+sonarqube {
+  properties {
+    property "sonar.qualitygate.wait", true
+  }
+}
+
+dependencies {
+     annotationProcessor(
+            'org.projectlombok:lombok'
+    )
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+    implementation 'org.projectlombok:lombok:1.18.20'
+    implementation 'com.googlecode.json-simple:json-simple:1.1.1'
+    implementation 'org.json:json:20231013'
+    implementation 'org.apache.commons:commons-lang3:3.12.0'
+    implementation 'com.google.code.gson:gson:2.10.1'
+    implementation 'com.googlecode.json-simple:json-simple:1.1.1'
+    implementation 'commons-io:commons-io:2.11.0'
+    implementation 'net.objecthunter:exp4j:0.4.8'
+    implementation 'com.fathzer:javaluator:3.0.3'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.15.3'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.3'
+    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.15.3'
+    implementation 'org.yaml:snakeyaml:2.0'
+
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
