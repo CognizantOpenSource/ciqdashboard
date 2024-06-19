@@ -1,0 +1,126 @@
+version: 2.1
+parameters:
+  project_name: 
+    description: Project name used for Checkmarx & BlackDuck scans
+    type: string
+    default: "IPR_ciqdashboard-auth"  # Provide the Project name used for Checkmarx & BlackDuck scans
+
+jobs: 
+  checkmarx_scan:
+    docker:
+      - image: codehub-docker.jfrog.io/devops-checkmarx:latest
+        auth:
+          username: $ARTIFACTORY_USER
+          password: $ARTIFACTORY_TOKEN
+    working_directory: ~/app
+    environment:
+      cx_projectname: << pipeline.parameters.project_name >>
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: start the Checkmarx scan
+          command: |
+            /opt/CxConsolePlugin/runCxConsole.sh Scan -v \
+            -CxServer $CHECKMARX_SERVER \
+            -Cxuser $CHECKMARX_USER \
+            -CxPassword $CHECKMARX_PASSWORD \
+            -ProjectName "CxServer\Acc-IPReady\\${cx_projectname}" \
+            -LocationType folder \
+            -LocationPath ~/app \
+            -Preset "Cognizant Default Preset" \
+            -executepackagedependency \
+            -ReportPDF ~/app/report/<< pipeline.parameters.project_name >>.pdf
+      - store_artifacts:
+          path: ~/app/report/<< pipeline.parameters.project_name >>.pdf    
+               
+  blackduck_scan:
+    docker:
+      - image: cimg/openjdk:11.0.17-browsers
+    working_directory: ~/app
+    environment:
+      COMMIT_ID: $(echo $CIRCLE_SHA1 | cut -c1-7)
+    steps:
+      - checkout
+      - attach_workspace:
+            at: workspace
+      - run:
+          name: setup
+          command: |
+            sudo apt-get update && sudo apt-get install dos2unix
+      - run:
+          name: Build the application # Run "git update-index --chmod=+x gradlew" in your windows machine if you get permission error on gradlew
+          command: |
+            chmod +x gradlew
+            dos2unix ./gradlew
+            ./gradlew clean build -x test
+      - run:
+          name: Start the Synopsys Detect scan
+          no_output_timeout: 30m
+          command: |
+            bash <(curl -s -L "${SYNOPSIS_URL}") \
+            --blackduck.url=$BLACKDUCK_URL \
+            --blackduck.api.token=$BLACKDUCK_TOKEN \
+            --detect.project.name=<< pipeline.parameters.project_name >> \
+            --detect.project.version.name="ver.2.1" \
+            --blackduck.trust.cert=true \
+            --detect.timeout=3600 \
+            --detect.detector.search.depth=0 \
+            --detect.tools=ALL,IAC_SCAN \
+            --detect.blackduck.signature.scanner.individual.file.matching=ALL \
+            --detect.detector.search.continue=true \
+            --logging.level.com.synopsys.integration=DEBUG \
+            --detect.risk.report.pdf=true \
+            --detect.risk.report.pdf.path="report" \
+            --detect.blackduck.signature.scanner.snippet.matching=SNIPPET_MATCHING \
+            --detect.excluded.directories=.git
+      - store_artifacts:
+          path: ~/app/report
+  
+  sonarqube:
+    docker:
+      - image: gradle:jre11-slim
+    working_directory: ~/app
+    environment:
+      PROJECT_KEY: ciqdashboard-auth # Replace the ProjectKey in the  line  With respective project name.
+    steps:
+      - checkout
+      - attach_workspace:
+          at: workspace
+      - run:
+          name: Sonar scan
+          command: |
+            chmod +x gradlew
+            ./gradlew test
+            ./gradlew sonarqube
+      
+
+workflows:
+  scan:
+    jobs:
+      - checkmarx_scan:
+         context: Codehub-Common
+         filters:
+          branches:
+            only:
+            - /sast\/.*/            # follow branching conventions matching the regex 
+                                           # eg: sast/1, sast/prod 
+                                           # to run sast scan
+                                           
+      - blackduck_scan: 
+          context: Codehub-Common
+          filters:
+            branches:
+              only:
+              - /oss\/.*/             # follow branching conventions matching the regex 
+                                            # eg: oss/1, oss/prod 
+                                            # to run blackduck scan
+
+      - sonarqube:
+          context: Codehub-Common
+          filters:
+            branches:
+              only:
+                - /sonar\/.*/        # follow branching conventions matching the regex 
+                                            # eg: sonar/1, sonar/prod 
+                                            # to run blackduck scan        

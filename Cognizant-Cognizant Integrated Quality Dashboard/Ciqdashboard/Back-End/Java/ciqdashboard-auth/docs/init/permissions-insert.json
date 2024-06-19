@@ -1,0 +1,24 @@
+db.permissions.insert(
+  [
+    {
+      "_id" : "team.create",
+      "name" : "Create Team",
+      "_class" : "com.cognizant.leap.users.beans.Permission"
+    },
+    {
+      "_id" : "team.update",
+      "name" : "Update Team",
+      "_class" : "com.cognizant.leap.users.beans.Permission"
+    },
+    {
+      "_id" : "team.delete",
+      "name" : "Delete Team",
+      "_class" : "com.cognizant.leap.users.beans.Permission"
+    },
+    {
+      "_id" : "team.view",
+      "name" : "View Team",
+      "_class" : "com.cognizant.leap.users.beans.Permission"
+    }
+  ]
+)

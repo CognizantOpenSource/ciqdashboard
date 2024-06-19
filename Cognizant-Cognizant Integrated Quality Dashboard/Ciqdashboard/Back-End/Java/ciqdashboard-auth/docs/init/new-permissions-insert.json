@@ -1,0 +1,57 @@
+db.permissions.insert(
+  [
+    {
+      "_id" : "permission.admin",
+      "name" : "Admin Permission"
+    },
+
+    {
+      "_id" : "user.account.view",
+      "name" : "View Account"
+    },
+    {
+      "_id" : "user.account.update",
+      "name" : "View Accounts"
+    },
+
+    {
+      "_id" : "permission.view",
+      "name" : "View Permissions"
+    },
+
+    {
+      "_id" : "role.view",
+      "name" : "View Roles"
+    },
+    {
+      "_id" : "role.create",
+      "name" : "View Roles"
+    },
+    {
+      "_id" : "role.update",
+      "name" : "View Roles"
+    },
+    {
+      "_id" : "role.delete",
+      "name" : "View Roles"
+    },
+
+    {
+      "_id" : "user.view",
+      "name" : "View Users"
+    },
+    {
+      "_id" : "user.create",
+      "name" : "View Users"
+    },
+    {
+      "_id" : "user.update",
+      "name" : "View Users"
+    },
+    {
+      "_id" : "user.delete",
+      "name" : "View Users"
+    },
+
+  ]
+)
