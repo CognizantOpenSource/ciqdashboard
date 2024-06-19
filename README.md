@@ -23,6 +23,10 @@ https://github.com/CognizantOpenSource/ciqdashboard-ui
   API Service contain all form data to save,update,edit and delete, to show the Graphical view and Table view. 
   https://github.com/CognizantOpenSource/ciqdashboard-api
   
+  # 3. Metric Services
+  This project provides the analytical data of charts for various tools like Jira, ALM, Zephyr, Bots, Jenkins, Service Now, Rally, Git & Xray. Data is fetched from the mongoDB for each tool & metric calculation will be done using metric formula. 
+  https://github.com/CognizantOpenSource/ciqdashboard-metric-services.git
+  
   # Collectors
  Collector is a standalone application that extracts data from source tool using REST API and stores in Mongo DB. We have collectors for JIRA, ALM, JENKINS, GITLAB, GITHUB, SONARQUBE, ARTIFACTORY. These applications can be executed as scheduled job 
   
